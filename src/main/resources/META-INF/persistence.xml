@@ -4,17 +4,16 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="pu.parduotuve">
         <!-- reikia isvardinti visas klases kurios turi @Entity anotacija -->
-        <class>lt.bit.java2.model.Client</class>
-        <class>lt.bit.java2.model.Invoice</class>
-
+        <class>lt.ss.java2.model.Client</class>
+        <class>lt.ss.java2.model.Invoice</class>
+        <class>lt.ss.java2.model.ClientEx</class>
 
         <properties>
             <!-- database connection -->
-            <!-- https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-connect-drivermanager.html -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/parduotuve?serverTimezone=Europe/Vilnius" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="mysql123" />
+            <property name="javax.persistence.jdbc.user" value="admin" />
+            <property name="javax.persistence.jdbc.password" value="" />
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
 

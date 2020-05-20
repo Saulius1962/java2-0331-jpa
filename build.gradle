@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
-group 'lt.bit.java2'
+group 'lt.ss.java2'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -12,10 +13,24 @@ repositories {
 }
 
 dependencies {
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.20'
     compile group: 'com.zaxxer', name: 'HikariCP', version: '3.4.3'
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.15.Final'
     compile group: 'org.hibernate', name: 'hibernate-hikaricp', version: '5.4.15.Final'
 
+    compile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.30'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.0'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5', version: '2.11.0'
+
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 }
